@@ -6,5 +6,9 @@
   "devDependencies": {
     "@ohos/hypium": "1.0.19",
     "@ohos/hamock": "1.0.0"
-  }
+  },
+  "author": "org.blxt",
+  "license": "MulanPSL2",
+  "keywords": ["悬浮球"],
+  "repository": "https://gitee.com/zhangjialei2/floatball4-harmony-os.git"
 }
