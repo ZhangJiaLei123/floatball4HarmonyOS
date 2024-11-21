@@ -2,23 +2,23 @@
   "app": {
     "signingConfigs": [
       {
-        "name": "default",
+        "name": "library",
         "type": "HarmonyOS",
         "material": {
-          "certpath": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.cer",
-          "storePassword": "0000001B86B596F1BCBC9FD28FB08D649FFD47CB1ECA9D378BF257ADE72A23A596AEA839A54FD3870968E1",
-          "keyAlias": "debugKey",
-          "keyPassword": "0000001B221749258A0E7A4F362431B24F0901D0DB5ABE49ABF4DE61CD4D7CDD20AF561AC8525380C5D36D",
-          "profile": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.p7b",
+          "storePassword": "0000001E48FE8EB035924E9DC6686F6A4C76E3F7C79703DDCDCC6BF78D17C0DCB20125A7B6D62956E11771EBE98C",
+          "certpath": "D:/zhang/Documents/workspace/harmony/key/com.blxt.floatball.cer",
+          "keyAlias": "lib",
+          "keyPassword": "0000001E7EE9EDF0920FDAFE79E284735C04DC7F24FBB39B650CCCE9B13A0897135C289602EB289BE147096A05A8",
+          "profile": "D:/zhang/Documents/workspace/harmony/key/floatballRelease.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.p12"
+          "storeFile": "D:/zhang/Documents/workspace/harmony/key/harmonyLib.p12"
         }
       }
     ],
     "products": [
       {
         "name": "default",
-        "signingConfig": "default",
+        "signingConfig": "library",
         "compatibleSdkVersion": "5.0.0(12)",
         "runtimeOS": "HarmonyOS",
         "buildOption": {

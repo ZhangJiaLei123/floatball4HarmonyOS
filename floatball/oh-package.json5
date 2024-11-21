@@ -1,11 +1,13 @@
 {
-  "name": "floatball",
+  "name": "org.blxt.floatball",
   "version": "1.0.0",
-  "description": "Please describe the basic information.",
+  "description": "一个harmonyos的原生悬浮球",
   "main": "Index.ets",
-  "author": "",
-  "license": "Apache-2.0",
   "packageType": "InterfaceHar",
   "dependencies": {
-  }
+  },
+  "author": "org.blxt",
+  "license": "MulanPSL2",
+  "keywords": ["悬浮球"],
+  "repository": "https://gitee.com/zhangjialei2/floatball4-harmony-os.git"
 }
