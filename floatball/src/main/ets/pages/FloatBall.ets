@@ -9,32 +9,37 @@ const TAG: string = '[FloatBall]';
 @Entry
 @Component
 export struct FloatBall {
-  @State statusHeight: number = 0 // 状态栏高度
+  @State statusHeight: number = 0          // 状态栏高度
   @State bottomAvoidAreaHeight: number = 0 // 手机底部规避区域高度
-  @State curLeft: number = 0 // 当前悬浮按钮距离窗口左边距离
-  @State curTop: number = 0 // 当前悬浮按钮距离窗口顶部距离
-  private startLeft: number = 0 // 开始移动那一刻悬浮按钮距离窗口左边距离
-  private startTop: number = 0 // 开始移动那一刻悬浮按钮距离窗口顶部距离
-  private startX: number = 0 // 开始移动触摸点x坐标，相对窗口左上角
-  private startY: number = 0 // 开始移动触摸点y坐标，相对窗口左上角
-  private winWidth: number = 0 // 窗口宽度
-  private winHeight: number = 0 // 窗口高度
-  private isTouc = false // 是否触摸中
-  private time = 0 // 隐藏定时器
-  image: Resource = null! // 图片资源
-  radius: number = 25 // 悬浮按钮半径
-  marginSart = 25 // 从隐藏恢复到显示状态的默认边距
-  aotoHide = true // 开启自动隐藏
-  aotoHideTime = 3000 // 自动隐藏的超时时间
-  aotoEdging = true // 自动贴边
-  aotoEdgingTime = 3000 // 自动贴边的超时时间
-  onMyClick?: () => void; // 点击事件传递
+  @State curLeft: number = 0               // 当前悬浮按钮距离窗口左边距离
+  @State curTop: number = 0                // 当前悬浮按钮距离窗口顶部距离
+  private startLeft: number = 0            // 开始移动那一刻悬浮按钮距离窗口左边距离
+  private startTop: number = 0             // 开始移动那一刻悬浮按钮距离窗口顶部距离
+  private startX: number = 0               // 开始移动触摸点x坐标，相对窗口左上角
+  private startY: number = 0               // 开始移动触摸点y坐标，相对窗口左上角
+  private winWidth: number = 0             // 窗口宽度
+  private winHeight: number = 0            // 窗口高度
+  private isTouc = false                   // 是否触摸中
+  private time = 0                         // 隐藏定时器
+  image: Resource = null!                  // 图片资源
+  radius: number = 25                      // 悬浮按钮半径
+  marginSart = 25                          // 从隐藏恢复到显示状态的默认边距
+  aotoHide = true                          // 开启自动隐藏
+  aotoHideTime = 3000                      // 自动隐藏的超时时间
+  aotoEdging = true                        // 自动贴边
+  aotoEdgingTime = 3000                    // 自动贴边的超时时间
+  onMyClick?: () => void;                  // 点击事件传递
 
+  /**
+   * 生命周期函数-初始化
+   */
   aboutToAppear() {
     this.getWindowInfo()
   }
 
-  //获取窗口尺寸信息
+  /**
+   * 获取窗口尺寸信息
+   */
   getWindowInfo() {
     window.getLastWindow(getContext(this), (err, windowClass) => {
       if (!err.code) { //状态栏高度
@@ -59,18 +64,21 @@ export struct FloatBall {
     })
   }
 
+  /**
+   * UI 绘制
+   */
   build() {
     //悬浮按钮
     Row() {
-      Image(this.image).width(this.radius * 2)
+      Image(this.image).width(this.radius * 2)           // 图片
     }
     .width(this.radius * 2)
     .height(this.radius * 2)
     .justifyContent(FlexAlign.Center)
     .borderRadius(this.radius)
     .backgroundColor('#E8E8E8')
-    .position({ x: this.curLeft, y: this.curTop })
-    .onTouch((event: TouchEvent) => { //手指按下记录初始触摸点坐标、悬浮按钮位置
+    .position({ x: this.curLeft, y: this.curTop })      // 位置绑定，注意@State关键词
+    .onTouch((event: TouchEvent) => {                   // 手指按下记录初始触摸点坐标、悬浮按钮位置
       if (event.type === TouchType.Down) {
         this.isTouc = true
         this.startX = event.touches[0].windowX
@@ -78,24 +86,26 @@ export struct FloatBall {
         this.startLeft = this.curLeft
         this.startTop = this.curTop
         console.log('TouchEvent: 按下');
-      } //手指拖动
+      }                                                 // 按下
       else if (event.type === TouchType.Up) {
         this.isTouc = false
         console.log('TouchEvent: 松开');
-        // 松开后隐藏
-        if (this.aotoHide) {
+        if (this.aotoHide) {                            // 松开后隐藏
           this.onHide()
         }
-      } //手指拖动
-      else if (event.type === TouchType.Move) {
+      }
+      else if (event.type === TouchType.Move) {         // 拖动
         this.isTouc = true
-        let touch = event.touches[0] //计算悬浮球与左边距离（x坐标）， 当前悬浮球距离左边=开始位置(x轴)+（当前触摸点x坐标-开始移动触摸点x坐标）
-        let curLeft = this.startLeft + (touch.windowX - this.startX) //限制悬浮球不能移除屏幕左边
-        curLeft = Math.max(0, curLeft) // 限制悬浮球不能移除屏幕右边
-        this.curLeft = Math.min(this.winWidth - 2 * this.radius,
-          curLeft) //计算悬浮球与顶部距离（y坐标）， 当前悬浮球距离顶部=开始位置(y轴)+（当前触摸点y坐标-开始移动触摸点y坐标）
-        let curTop = this.startTop + (touch.windowY - this.startY) //限制悬浮球不能移除屏幕上边
-        curTop = Math.max(0, curTop) //限制悬浮球不能移除屏幕下边
+        let touch = event.touches[0]                                        // 计算悬浮球与左边距离（x坐标），
+                                                                            // 当前悬浮球距离左边=开始位置(x轴)
+                                                                            // +（当前触摸点x坐标-开始移动触摸点x坐标）
+        let curLeft = this.startLeft + (touch.windowX - this.startX)        // 限制悬浮球不能移除屏幕左边
+        curLeft = Math.max(0, curLeft)                                      // 限制悬浮球不能移除屏幕右边
+        this.curLeft = Math.min(this.winWidth - 2 * this.radius,curLeft)    // 计算悬浮球与顶部距离（y坐标），
+                                                                            // 当前悬浮球距离顶部=开始位置(y轴)
+                                                                            // +（当前触摸点y坐标-开始移动触摸点y坐标）
+        let curTop = this.startTop + (touch.windowY - this.startY)          // 限制悬浮球不能移除屏幕上边
+        curTop = Math.max(0, curTop)                                        // 限制悬浮球不能移除屏幕下边
         this.curTop =
           Math.min(this.winHeight - 2 * this.radius - this.bottomAvoidAreaHeight - this.statusHeight, curTop)
         console.log('TouchEvent: 移动');
@@ -109,8 +119,7 @@ export struct FloatBall {
       if (this.onMyClick !== undefined) {
         this.onMyClick();
         if (this.aotoHide) {
-          // 点击完，就继续去隐藏
-          this.onHide();
+          this.onHide();                                                     // 点击完，就继续去隐藏
         }
       }
     })
