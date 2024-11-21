@@ -1,0 +1,42 @@
+import { FloatBall } from 'floatball';
+import { promptAction } from '@kit.ArkUI';
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct Index {
+  controller: WebviewController = new webview.WebviewController();
+
+  build() {
+    Stack() {
+      // 一个webview，充当用户业务视图
+      Web({ src: "www.baidu.com", controller: this.controller })
+        .domStorageAccess(true)
+        .onlineImageAccess(true)
+        .imageAccess(true)
+        .zoomAccess(false)// 禁止缩放
+        .javaScriptAccess(true)// 启用js交互
+        .backgroundColor(Color.White)// 背景
+        .width('100%')
+
+      // 悬浮按钮
+      FloatBall({
+        image: $r('app.media.startIcon'),  // 图片资源
+        radius: 25,                        // 悬浮按钮半径
+        aotoEdging: true,                  // 开启自动贴边
+        aotoHide: true,                    // 开启自动隐藏
+        onMyClick: (): void => {
+          promptAction.showToast({ message: '点击了悬浮球' });
+          if(this.controller.accessStep(-1)){
+            this.controller.backward(); // 返回上一个web页
+          }
+        }
+      })
+        .touchable(false) // 重要用于点击事件穿透，不然无法点击Web内容
+        .width("100%")
+        .height("100%")
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
