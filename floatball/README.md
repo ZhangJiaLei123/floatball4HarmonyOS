@@ -1,11 +1,11 @@
 
-## 🏆 简介与推荐 floatball4HarmonyOS 
+## 🏆 简介与推荐 @blxt/floatball 
 
 原生鸿蒙实现的悬浮球，简单好用，像使用一个ImageView一样去使用他
 
 ## 🌞下载与安装
 
-`ohpm i org.blxt.floatball`
+`ohpm i @blxt/floatball`
 
 OpenHarmony ohpm 环境配置等更多内容，请参考[如何安装 OpenHarmony ohpm 包](https://ohpm.openharmony.cn/#/cn/help/downloadandinstall)
 

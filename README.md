@@ -1,6 +1,6 @@
 
 
-## 🏆 简介与推荐 floatball4HarmonyOS
+## 🏆 简介与推荐 @blxt/floatball
 
 原生鸿蒙实现的悬浮球，简单好用，像使用一个ImageView一样去使用他
  
