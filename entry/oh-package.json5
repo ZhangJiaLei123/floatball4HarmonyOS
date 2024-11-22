@@ -6,7 +6,7 @@
   "author": "",
   "license": "",
   "dependencies": {
-    "org.blxt.floatball": "file:../floatball"
+    "@blxt/floatball": "file:../floatball"
   }
 }
 

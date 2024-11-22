@@ -115,7 +115,7 @@
 [ gitee地址： https://gitee.com/zhangjialei2/floatball4-harmony-os](https://gitee.com/zhangjialei2/floatball4-harmony-os)  
 [ github地址： https://gitee.com/zhangjialei2/floatball4-harmony-os](https://github.com/ZhangJiaLei123/floatball4HarmonyOS)
 
-* 欢迎您贡献代码或者提交Issue    
+* 欢迎您贡献代码或者提交Issue     
 推送仓库 `ohpm publish ./floatball/build/default/outputs/default/floatball.har`
 
 

@@ -1,4 +1,4 @@
-import { FloatBall } from 'org.blxt.floatball';
+import { FloatBall } from '@blxt/floatball';
 import { promptAction } from '@kit.ArkUI';
 import { webview } from '@kit.ArkWeb';
 

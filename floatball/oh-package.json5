@@ -1,5 +1,5 @@
 {
-  "name": "org.blxt.floatball",
+  "name": "@blxt/floatball",
   "version": "1.0.0",
   "description": "一个harmonyos的原生悬浮球",
   "main": "Index.ets",
