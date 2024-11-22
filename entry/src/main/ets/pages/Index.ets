@@ -26,11 +26,25 @@ struct Index {
         marginSart: 25,                               // 从隐藏恢复到显示状态的默认边距
         aotoEdging: true,                             // 开启自动贴边
         aotoHide: true,                               // 开启自动隐藏
-        onMyClick: (): void => {
+        opacityHide: 0.5,                             // 半隐藏后的透明度
+        onClickEvent: (): boolean => {                // 点击事件
           promptAction.showToast({ message: '点击了悬浮球' });
           if(this.controller.accessStep(-1)){
             this.controller.backward(); // 返回上一个web页
           }
+          return true
+        },
+        onEdgingEvent: (): boolean => {
+          promptAction.showToast({ message: '我贴边了' });
+          return true
+        },
+        onHideEvent: (): boolean => {
+          promptAction.showToast({ message: '我隐藏了' });
+          return true
+        },
+        onShowEvent: (): boolean => {
+          promptAction.showToast({ message: '我显示了' });
+          return true
         }
       })
         // .touchable(false)                         // 这个过期了，.hitTestBehavior(HitTestMode.None)代替

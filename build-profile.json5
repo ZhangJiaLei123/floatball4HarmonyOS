@@ -5,20 +5,33 @@
         "name": "library",
         "type": "HarmonyOS",
         "material": {
-          "storePassword": "0000001E48FE8EB035924E9DC6686F6A4C76E3F7C79703DDCDCC6BF78D17C0DCB20125A7B6D62956E11771EBE98C",
-          "certpath": "D:/zhang/Documents/workspace/harmony/key/com.blxt.floatball.cer",
+          "certpath": "D:/develop/Huwwei/key/com.blxt.floatball.cer",
+          "storePassword": "0000001E8A4228B6950854856C96234484429BB200957925B6BB8CF85F0F4369DADBA441114A04C70F8C529659F6",
           "keyAlias": "lib",
-          "keyPassword": "0000001E7EE9EDF0920FDAFE79E284735C04DC7F24FBB39B650CCCE9B13A0897135C289602EB289BE147096A05A8",
-          "profile": "D:/zhang/Documents/workspace/harmony/key/floatballRelease.p7b",
+          "keyPassword": "0000001EB54079976CECA86D9E04D23050BE04D2BE81F0685D44D4325BA4F28180D17D5B9FC9D06C7AA31B7BBDF6",
+          "profile": "D:/develop/Huwwei/key/floatballRelease.p7b",
           "signAlg": "SHA256withECDSA",
-          "storeFile": "D:/zhang/Documents/workspace/harmony/key/harmonyLib.p12"
+          "storeFile": "D:/develop/Huwwei/key/harmonyLib.p12"
+        }
+      },
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.cer",
+          "storePassword": "0000001A7CEF2593355A598685EA1B7B15780709CB76780992BB5F572CBBB32032B9E4C0CE0643163C3A",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001AA0B7AB2072E3E1720D1BC1128F199B0B4ED45D9650E89D58A7246230A9F2A102F96758F3D311",
+          "profile": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.p12"
         }
       }
     ],
     "products": [
       {
         "name": "default",
-        "signingConfig": "library",
+        "signingConfig": "default",
         "compatibleSdkVersion": "5.0.0(12)",
         "runtimeOS": "HarmonyOS",
         "buildOption": {
