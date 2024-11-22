@@ -43,7 +43,7 @@
   // ...
   "dependencies": {
     // 这里写导入的模块文件夹名称
-    "floatball": "file:../floatball"
+    "@blxt/floatball": "file:../floatball"
   }
 }
  
@@ -53,9 +53,12 @@
 ```json5
 {
   // ...
+  "specifiers": {
+    "@blxt/floatball@../floatball": "@blxt/floatball@../floatball"
+  },
   "packages": {
-    "floatball@../floatball": {
-      "name": "floatball",
+    "@blxt/floatball@../floatball": {
+      "name": "@blxt/floatball",
       "version": "1.0.0",
       "resolved": "../floatball",
       "registryType": "local",
