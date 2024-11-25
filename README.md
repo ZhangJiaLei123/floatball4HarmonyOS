@@ -89,7 +89,7 @@ OpenHarmony ohpm 环境配置等更多内容，请参考[如何安装 OpenHarmon
 
 ## 🌏仓库地址
 [ gitee地址： https://gitee.com/zhangjialei2/floatball4-harmony-os](https://gitee.com/zhangjialei2/floatball4-harmony-os)  
-[ github地址： https://gitee.com/zhangjialei2/floatball4-harmony-os](https://github.com/ZhangJiaLei123/floatball4HarmonyOS)
+[ github地址： https://github.com/ZhangJiaLei123/floatball4HarmonyOS.git](https://github.com/ZhangJiaLei123/floatball4HarmonyOS)
 
 ## 🍎沟通与交流🙏
 使用过程中发现任何问题都可以提 [Issue](https://gitee.com/zhangjialei2/floatball4-harmony-os)  给我
