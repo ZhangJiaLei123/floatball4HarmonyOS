@@ -1,0 +1,12 @@
+{
+  "name": "entry",
+  "version": "1.0.0",
+  "description": "一个harmonyos的原生悬浮球demo.",
+  "main": "",
+  "author": "",
+  "license": "",
+  "dependencies": {
+    "@blxt/floatball": "file:../floatball"
+  }
+}
+

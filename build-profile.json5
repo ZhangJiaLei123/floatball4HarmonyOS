@@ -1,0 +1,80 @@
+{
+  "app": {
+    "signingConfigs": [
+      {
+        "name": "library",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "D:/develop/Huwwei/key/com.blxt.floatball.cer",
+          "storePassword": "0000001E8A4228B6950854856C96234484429BB200957925B6BB8CF85F0F4369DADBA441114A04C70F8C529659F6",
+          "keyAlias": "lib",
+          "keyPassword": "0000001EB54079976CECA86D9E04D23050BE04D2BE81F0685D44D4325BA4F28180D17D5B9FC9D06C7AA31B7BBDF6",
+          "profile": "D:/develop/Huwwei/key/floatballRelease.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "D:/develop/Huwwei/key/harmonyLib.p12"
+        }
+      },
+      {
+        "name": "default",
+        "type": "HarmonyOS",
+        "material": {
+          "certpath": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.cer",
+          "storePassword": "0000001A7CEF2593355A598685EA1B7B15780709CB76780992BB5F572CBBB32032B9E4C0CE0643163C3A",
+          "keyAlias": "debugKey",
+          "keyPassword": "0000001AA0B7AB2072E3E1720D1BC1128F199B0B4ED45D9650E89D58A7246230A9F2A102F96758F3D311",
+          "profile": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.p7b",
+          "signAlg": "SHA256withECDSA",
+          "storeFile": "C:\\Users\\ZhangJiaLei\\.ohos\\config\\default_FloatBall_N70sF_GFdGqBepezVFrVCnXV-ptpB9lUrFbchj9YdZM=.p12"
+        }
+      }
+    ],
+    "products": [
+      {
+        "name": "default",
+        "signingConfig": "default",
+        "compatibleSdkVersion": "5.0.0(12)",
+        "runtimeOS": "HarmonyOS",
+        "buildOption": {
+          "strictMode": {
+            "caseSensitiveCheck": true,
+            "useNormalizedOHMUrl": true
+          }
+        }
+      }
+    ],
+    "buildModeSet": [
+      {
+        "name": "debug",
+      },
+      {
+        "name": "release"
+      }
+    ]
+  },
+  "modules": [
+    {
+      "name": "entry",
+      "srcPath": "./entry",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "floatball",
+      "srcPath": "./floatball",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    }
+  ]
+}
