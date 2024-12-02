@@ -7,6 +7,8 @@ import { webview } from '@kit.ArkWeb';
 struct Index {
   controller: WebviewController = new webview.WebviewController();
 
+  imageUrl = 'https://img1.baidu.com/it/u=3954245725,1121943782&fm=253&fmt=auto&app=120&f=JPEG?w=640&h=400'
+
   build() {
     Stack() {
       // 一个webview，充当用户业务视图
@@ -21,7 +23,8 @@ struct Index {
 
       // 悬浮按钮
       FloatBall({
-        image: $r('app.media.startIcon'),             // 图片资源
+      //  image: $r('app.media.startIcon'),           // 本地图片资源
+        image: this.imageUrl,                         // 网络图片资源
         radius: 25,                                   // 悬浮按钮半径
         marginSart: 25,                               // 从隐藏恢复到显示状态的默认边距
         aotoEdging: true,                             // 开启自动贴边

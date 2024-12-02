@@ -1,6 +1,6 @@
 {
   "name": "@blxt/floatball",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "一个harmonyos的原生悬浮球",
   "main": "Index.ets",
   "packageType": "InterfaceHar",

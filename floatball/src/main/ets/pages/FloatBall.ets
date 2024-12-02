@@ -23,7 +23,7 @@ export struct FloatBall {
   private isTouc = false                   // 是否触摸中
   private time = 0                         // 隐藏定时器
   private state = 0                        // 当前状态 0 未处理 1 显示 2 贴边 3 隐藏
-  image: Resource = null!                  // 图片资源
+  image: Resource | string = null!                  // 图片资源
   radius: number = 25                      // 悬浮按钮半径
   opacityHide: number = 1.0                // 半隐藏后的透明度
   opacityDefault: number = 1.0             // 默认透明度
@@ -82,7 +82,8 @@ export struct FloatBall {
   build() {
     //悬浮按钮
     Row() {
-      Image(this.image).width(this.radius * 2)           // 图片
+      Image(this.image)
+        .width(this.radius * 2)           // 图片
     }
     .width(this.radius * 2)
     .height(this.radius * 2)
